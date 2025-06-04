@@ -1,3 +1,17 @@
+/**
+ * Plik: main.c
+ *
+ * Opis:
+ * Główna funkcja uruchamiająca system przetwarzania danych RCP.
+ * Wczytuje dane z plików wejściowych:
+ *  - godziny pracy pracowników,
+ *  - nieobecności,
+ *  - konfigurację zmian.
+ * 
+ * Dane są ładowane do pamięci przez odpowiednie moduły, a następnie gotowe
+ * do dalszego przetwarzania (np. porównań, raportowania, itp.).
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "include/structs.h"

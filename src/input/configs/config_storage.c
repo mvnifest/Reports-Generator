@@ -1,3 +1,13 @@
+/**
+ * Plik: config_storage.c
+ * Autor: Konrad Biały
+ *
+ * Opis:
+ * Przechowuje dane konfiguracyjne typu ScheduleConfig[].
+ * Umożliwia dodawanie konfiguracji, pobieranie wymaganych godzin dla zmiany,
+ * oraz odczyt liczby dostępnych konfiguracji.
+ */
+
 #include "config_storage.h"
 
 #define MAX_CONFIGS 100

@@ -1,0 +1,20 @@
+# pliki VSCode
+.vscode/
+
+# pliki wykonywalne i obiekty
+*.exe
+*.o
+*.obj
+*.out
+
+# foldery buildów
+bin/
+build/
+
+# dane wyjściowe
+RCP_OUT/*
+
+# inne tymczasowe
+*.log
+*.tmp
+*.bak
