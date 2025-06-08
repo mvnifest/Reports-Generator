@@ -29,4 +29,5 @@ Ten projekt to system napisany w języku C, który wczytuje dane o czasie pracy 
 - Konrad Biały
 - Kamil Celadyn
 - Misha Bodnar
--Filip Kasprzycki
+- Filip Kasprzycki
+
