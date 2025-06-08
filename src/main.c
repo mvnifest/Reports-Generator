@@ -14,8 +14,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "include/structs.h"
+#include "structs.h"
 #include "entry_reader.h"
+#include "menu_users.h"
 
 
 
@@ -45,6 +46,7 @@ int main() {
         printf("2. Wczytaj dane wejściowe ponownie\n");
         printf("3. Oblicz i pokaż podsumowanie pracy\n");
         printf("4. Wygeneruj raporty\n");
+        printf("5. Menu Użytkowników\n");
         printf("0. Wyjście\n");
         printf("Wybór: ");
         scanf("%d", &choice);
@@ -66,6 +68,9 @@ int main() {
             case 4:
                 printf("Wygenerowanie raportów:\n");
                 generateReports();
+                break;
+            case 5:
+                handleUserMenu();
                 break;
             case 0:
                 saveUsers();
