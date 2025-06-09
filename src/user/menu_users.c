@@ -10,7 +10,7 @@ void displayUserMenu() {
     printf("3. Usun użytkownika\n");
     printf("4. Wyswietl wszystkich\n");
     printf("0. Powrot\n");
-    printf("Wybierz opcję: ");
+    printf("Wybierz opcje: ");
 }
 
 void showAllUsers() {
@@ -78,11 +78,11 @@ void handleUserMenu() {
                 break;
 
             case 3:
-                printf("Podaj ID do usunięcia: ");
+                printf("Podaj ID do usuniccia: ");
                 scanf("%d", &id);
                 status = deleteUser(id);
-                if (status == DELETE_SUCCESS) printf("Usunięto!\n");
-                else printf("Nie znaleziono użytkownika!\n");
+                if (status == DELETE_SUCCESS) printf("Usunieto!\n");
+                else printf("Nie znaleziono uzytkownika!\n");
                 break;
 
             case 4:
