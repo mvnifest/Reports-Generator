@@ -30,8 +30,8 @@ void readConfigFiles();
 void readWorkEntries();
 void readAbsences();
 
-//void calculateSummary();        
-//void generateReports();
+void calculateSummary();
+void generateReports();
 void showMenu();
 
 int main() {

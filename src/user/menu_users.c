@@ -1,4 +1,3 @@
-
 #include "user/user_db.h"
 #include "structs.h"
 #include <stdio.h>
@@ -16,15 +15,14 @@ void displayUserMenu() {
 void showAllUsers() {
     int count;
     User* users = getAllUsers(&count);
-    
-    printf("\nID\tHarmonogram\n");
-    printf("----------------\n");
+    printf("\nID\tImię\t	Nazwisko\t	Harmonogram\n");
+    printf("---------------------------------------------------\n");
     for (int i = 0; i < count; i++) {
-        printf("%d\t", users[i].id);
+        printf("%d\t%-16s%-16s", users[i].id, users[i].name, users[i].surname);
         switch(users[i].schedule) {
             case 1: printf("7-14"); break;
             case 2: printf("14-22"); break;
-            case 3: printf("Nienormowany"); break; //nadgodziny 
+            case 3: printf("Nienormowany"); break;
             default: printf("Nieznany");
         }
         printf("\n");
@@ -43,8 +41,8 @@ void handleUserMenu() {
         
         switch(choice) {
             case 1:
-                printf("Podaj ID i harmonogram (1-3): ");
-                scanf("%d %d", &user.id, &user.schedule);
+                printf("Podaj ID, imię, nazwisko i harmonogram (1-3): ");
+                scanf("%d %31s %31s %d", &user.id, user.name, user.surname, &user.schedule);
                 status = addUser(user);
                 if (status == ADD_SUCCESS) printf("Dodano!\n");
                 else if (status == ADD_DUPLICATE) printf("ID juz istnieje!\n");

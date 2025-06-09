@@ -36,3 +36,9 @@ int getAbsenceCount() {
 void clearAbsences() {
     absenceCount = 0;
 }
+
+// Sprawdza, czy pracownik był nieobecny danego dnia
+int checkAbsence(int empId, int year, int month, int day) {
+    // TODO: Sprawdź w tablicy nieobecności, na razie zawsze 0
+    return 0;
+}
