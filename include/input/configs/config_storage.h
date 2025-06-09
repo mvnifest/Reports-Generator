@@ -9,7 +9,7 @@
 #ifndef CONFIG_STORAGE_H
 #define CONFIG_STORAGE_H
 
-#include "../../include/structs.h"
+#include "structs.h"
 
 void addScheduleConfig(ScheduleConfig config);
 int getRequiredHours(int scheduleId);

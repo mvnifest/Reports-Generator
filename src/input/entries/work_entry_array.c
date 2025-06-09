@@ -8,7 +8,7 @@
  * Służy jako bufor danych wejściowych dla dalszych modułów.
  */
 
-#include "work_entry_array.h"
+#include "input/entries/work_entry_array.h"
 
 #define MAX_ENTRIES 1000
 

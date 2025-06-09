@@ -8,7 +8,7 @@
  * Może być używany do dalszej analizy (np. w raportach lub podsumowaniach).
  */
 
-#include "entry_storage.h"
+#include "input/entries/entry_storage.h"
 #include <string.h>
 
 #define MAX_ENTRIES 1000

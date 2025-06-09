@@ -9,7 +9,7 @@
 #ifndef ENTRY_PARSER_H
 #define ENTRY_PARSER_H
 
-#include "../../include/structs.h"
+#include "structs.h"
 
 Entry parseWorkLine(const char* line);
 

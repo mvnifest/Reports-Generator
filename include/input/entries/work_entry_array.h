@@ -10,7 +10,7 @@
 #ifndef WORK_ENTRY_ARRAY_H
 #define WORK_ENTRY_ARRAY_H
 
-#include "../../include/structs.h"
+#include "structs.h"
 
 void addEntry(Entry entry);
 Entry getEntry(int index);

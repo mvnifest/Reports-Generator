@@ -12,9 +12,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-#include "../../include/structs.h"
-#include "config_reader.h"
-#include "config_storage.h"
+#include "structs.h"
+#include "input/configs/config_reader.h"
+#include "input/configs/config_storage.h"
 
 int isConfigFile(const char* filename) {
     return strstr(filename, ".txt") != NULL;

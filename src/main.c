@@ -15,10 +15,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "structs.h"
-#include "entry_reader.h"
-#include "menu_users.h"
-
-
+#include "input/entries/entry_reader.h"
+#include "user/user_db.h"
+#include "user/user_storage.h"
+#include "user/menu_users.h"
+#include "reports/report_writer.h"
+#include "reports/summary.h"
 
 void loadUsers();               
 void saveUsers();

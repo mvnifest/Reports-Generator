@@ -9,7 +9,7 @@
 #ifndef ABSENCE_STORAGE_H
 #define ABSENCE_STORAGE_H
 
-#include "../../include/structs.h"
+#include "structs.h"
 
 void addAbsence(Absence a);
 Absence getAbsence(int index);

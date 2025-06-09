@@ -7,7 +7,7 @@
  * Umożliwia dodawanie, pobieranie oraz czyszczenie wpisów.
  */
 
- #include "absence_storage.h"
+ #include "input/absences/absence_storage.h"
 
 #define MAX_ABSENCES 1000
 

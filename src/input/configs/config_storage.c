@@ -8,7 +8,7 @@
  * oraz odczyt liczby dostępnych konfiguracji.
  */
 
-#include "config_storage.h"
+#include "input/configs/config_storage.h"
 
 #define MAX_CONFIGS 100
 

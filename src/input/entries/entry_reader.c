@@ -14,10 +14,10 @@
 #include <string.h>
 #include <dirent.h>
 #include <time.h>
-#include "entry_reader.h"
-#include "entry_parser.h"
-#include "entry_storage.h"
-#include "work_entry_array.h"
+#include "input/entries/entry_reader.h"
+#include "input/entries/entry_parser.h"
+#include "input/entries/entry_storage.h"
+#include "input/entries/work_entry_array.h"
 
 
 int isRCPFile(const char* filename) {

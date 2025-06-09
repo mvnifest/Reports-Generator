@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "structs.h": "c",
+        "entry_reader.h": "c",
+        "entry_storage.h": "c",
+        "work_entry_array.h": "c",
+        "absence_storage.h": "c",
+        "config_reader.h": "c",
+        "config_storage.h": "c",
+        "report_writer.h": "c",
+        "summary.h": "c",
+        "user_storage.h": "c",
+        "user_db.h": "c",
+        "absence_reader.h": "c",
+        "random": "c"
+    }
+}

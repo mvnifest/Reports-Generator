@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "entry_parser.h"
-#include "../../include/structs.h"
+#include "input/entries/entry_parser.h"
+#include "structs.h"
 
 Entry parseWorkLine(const char* line) {
     Entry entry;

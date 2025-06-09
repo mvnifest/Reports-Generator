@@ -10,7 +10,7 @@
 #ifndef ENTRY_STORAGE_H
 #define ENTRY_STORAGE_H
 
-#include "../../include/structs.h"
+#include "structs.h"
 
 void addEntry(Entry entry);
 Entry getEntry(int index);

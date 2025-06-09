@@ -12,9 +12,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-#include "../../include/structs.h"
-#include "absence_reader.h"
-#include "absence_storage.h"
+#include "structs.h"
+#include "input/absences/absence_reader.h"
+#include "input/absences/absence_storage.h"
 
 int isAbsenceFile(const char* filename) {
     return strncmp(filename, "Absence_", 8) == 0;
