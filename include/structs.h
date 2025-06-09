@@ -3,7 +3,7 @@
 
 typedef struct {
     int id;
-    int schedule; // 1 - zmiana 1, 2 - zmiana 2, 3 - nocna
+    int schedule; // 1 - zmiana 1, 2 - zmiana 2, 3 - nadgodziny
 } User;
 
 typedef struct {

@@ -43,8 +43,13 @@ void handleUserMenu() {
         
         switch(choice) {
             case 1:
-                printf("Podaj ID i harmonogram (1-3): ");
-                scanf("%d %d", &user.id, &user.schedule);
+            do {
+                    printf("Podaj ID i harmonogram (1-3): ");
+                    scanf("%d %d", &user.id, &user.schedule);
+                    if (user.schedule < 1 || user.schedule > 3) {
+                        printf("Błędny harmonogram! Dozwolone wartości: 1, 2 lub 3.\n");
+                    }
+                } while (user.schedule < 1 || user.schedule > 3);
                 status = addUser(user);
                 if (status == ADD_SUCCESS) printf("Dodano!\n");
                 else if (status == ADD_DUPLICATE) printf("ID juz istnieje!\n");

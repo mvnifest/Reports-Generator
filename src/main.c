@@ -30,8 +30,8 @@ void readConfigFiles();
 void readWorkEntries();
 void readAbsences();
 
-//void calculateSummary();        
-//void generateReports();
+void calculateSummary();        
+void generateReports();
 void showMenu();
 
 int main() {
@@ -46,11 +46,11 @@ int main() {
         printf("SYSTEM RCP\n");
         printf("1. Wyswietl wszystkich uzytkownikow\n");
         printf("2. Wczytaj dane wejsciowe ponownie\n");
-        printf("3. Oblicz i pokaż podsumowanie pracy\n");
+        printf("3. Oblicz i pokaz podsumowanie pracy\n");
         printf("4. Wygeneruj raporty\n");
-        printf("5. Menu Użytkowników\n");
-        printf("0. Wyjście\n");
-        printf("Wybór: ");
+        printf("5. Menu Uzytkownikow\n");
+        printf("0. Wyjscie\n");
+        printf("Wybor: ");
         scanf("%d", &choice);
 
         switch (choice) {
