@@ -30,8 +30,8 @@ void readConfigFiles();
 void readWorkEntries();
 void readAbsences();
 
-void calculateSummary();        
-void generateReports();
+//void calculateSummary();        
+//void generateReports();
 void showMenu();
 
 int main() {
@@ -44,8 +44,8 @@ int main() {
 
     do {
         printf("SYSTEM RCP\n");
-        printf("1. Wyświetl wszystkich użytkowników\n");
-        printf("2. Wczytaj dane wejściowe ponownie\n");
+        printf("1. Wyswietl wszystkich uzytkownikow\n");
+        printf("2. Wczytaj dane wejsciowe ponownie\n");
         printf("3. Oblicz i pokaż podsumowanie pracy\n");
         printf("4. Wygeneruj raporty\n");
         printf("5. Menu Użytkowników\n");
@@ -55,7 +55,7 @@ int main() {
 
         switch (choice) {
             case 1:
-                printf("Wyświetlanie wszystkich użytkowników:\n");
+                printf("Wyswietlanie wszystkich uzytkowników:\n");
                 showAllUsers();
                 break;
             case 2:
@@ -68,7 +68,7 @@ int main() {
                 calculateSummary();
                 break;
             case 4:
-                printf("Wygenerowanie raportów:\n");
+                printf("Wygenerowanie raportow:\n");
                 generateReports();
                 break;
             case 5:
@@ -79,7 +79,7 @@ int main() {
                 printf("Zamykam program...\n");
                 break;
             default:
-                printf("Nieprawidłowy wybór.\n");
+                printf("Nieprawidlowy wybor.\n");
         }
     } while (choice != 0);
 
