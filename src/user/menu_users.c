@@ -4,12 +4,12 @@
 #include <stdio.h>
 
 void displayUserMenu() {
-    printf("\n=== MENU UŻYTKOWNIKÓW ===\n");
-    printf("1. Dodaj użytkownika\n");
+    printf("\n=== MENU UZYTKOWNIKOW ===\n");
+    printf("1. Dodaj uzytkownika\n");
     printf("2. Edytuj harmonogram\n");
-    printf("3. Usuń użytkownika\n");
-    printf("4. Wyświetl wszystkich\n");
-    printf("0. Powrót\n");
+    printf("3. Usun użytkownika\n");
+    printf("4. Wyswietl wszystkich\n");
+    printf("0. Powrot\n");
     printf("Wybierz opcję: ");
 }
 
@@ -24,7 +24,7 @@ void showAllUsers() {
         switch(users[i].schedule) {
             case 1: printf("7-14"); break;
             case 2: printf("14-22"); break;
-            case 3: printf("Nienormowany"); break;
+            case 3: printf("Nienormowany"); break; //nadgodziny 
             default: printf("Nieznany");
         }
         printf("\n");
@@ -47,8 +47,8 @@ void handleUserMenu() {
                 scanf("%d %d", &user.id, &user.schedule);
                 status = addUser(user);
                 if (status == ADD_SUCCESS) printf("Dodano!\n");
-                else if (status == ADD_DUPLICATE) printf("ID już istnieje!\n");
-                else printf("Błąd dodawania!\n");
+                else if (status == ADD_DUPLICATE) printf("ID juz istnieje!\n");
+                else printf("Blad dodawania!\n");
                 break;
                 
             case 2:
@@ -56,7 +56,7 @@ void handleUserMenu() {
                 scanf("%d %d", &id, &schedule);
                 status = editUser(id, schedule);
                 if (status == EDIT_SUCCESS) printf("Zaktualizowano!\n");
-                else printf("Nie znaleziono użytkownika!\n");
+                else printf("Nie znaleziono uzytkownika!\n");
                 break;
                 
             case 3:
