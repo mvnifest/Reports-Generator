@@ -69,7 +69,7 @@ void handleUserMenu() {
                         "3: Nienormowany (nadgodziny)\n");
                     scanf("%d", &schedule);
                     if (schedule < 1 || schedule > 3) {
-                        printf("Błędny harmonogram! Dozwolone wartości: 1, 2 lub 3.\n");
+                        printf("Bledny harmonogram! Dozwolone wartosci: 1, 2 lub 3.\n");
                     }
                 } while (schedule < 1 || schedule > 3);
                 status = editUser(id, schedule);
