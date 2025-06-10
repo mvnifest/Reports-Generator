@@ -10,6 +10,8 @@
 
 #include "input/entries/entry_storage.h"
 #include <string.h>
+#include <stdio.h>
+#include "structs.h"
 
 #define MAX_ENTRIES 1000
 

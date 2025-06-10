@@ -9,6 +9,7 @@
 
 #include "input/absences/absence_storage.h"
 #include <string.h>
+#include <stdio.h> 
 
 #define MAX_ABSENCES 1000
 
