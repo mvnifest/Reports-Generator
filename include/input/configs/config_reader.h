@@ -9,6 +9,9 @@
 #ifndef CONFIG_READER_H
 #define CONFIG_READER_H
 
+#include "input/configs/config_storage.h"
+
 void readConfigFiles();
+int getConfigHoursForMonth(int year, int month, int workScheme);  // ← to jest potrzebne!
 
 #endif

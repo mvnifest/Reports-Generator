@@ -1,0 +1,6 @@
+RAPORT PRACY PRACOWNIKA
+Data generowania: 2025-06-10 14:09:14
+
+Pracownik: 1
+Rok: 2015, Miesiąc: 32766
+Brak danych o pracowniku!

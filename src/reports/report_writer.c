@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include "reports/report_writer.h"
 #include "user/user_db.h"
 #include "input/entries/entry_storage.h"
 #include "input/absences/absence_storage.h"
 #include "input/configs/config_storage.h"
+#include "input/configs/config_reader.h"   
+#include "input/absences/absence_reader.h"   
+#include "input/entries/entry_reader.h"
 #include <string.h>
 
 // --- Pomocnicze funkcje do raportowania ---
@@ -124,34 +128,34 @@ void generateReportForEmployee(int year, int month, int empId) {
 // Menu wyboru raportów
 void generateReportsMenu() {
     int wybor;
-    printf("\nMENU RAPORTÓW:\n");
+    printf("\nMENU RAPORTOW:\n");
     printf("1. Raport jednego pracownika\n");
     printf("2. Raport kilku pracowników (podaj zakres)\n");
-    printf("3. Raport wszystkich pracowników\n");
-    printf("0. Powrót\n");
-    printf("Wybierz opcję: ");
+    printf("3. Raport wszystkich pracownikow\n");
+    printf("0. Powrot\n");
+    printf("Wybierz opcje: ");
     scanf("%d", &wybor);
     if (wybor == 1) {
         int rok, miesiac, id;
         printf("Podaj rok: "); scanf("%d", &rok);
-        printf("Podaj miesiąc: "); scanf("%d", &miesiac);
+        printf("Podaj miesiac: "); scanf("%d", &miesiac);
         printf("Podaj nr pracownika: "); scanf("%d", &id);
         generateReportForEmployee(rok, miesiac, id);
     } else if (wybor == 2) {
         int rok, miesiac, id1, id2;
         printf("Podaj rok: "); scanf("%d", &rok);
-        printf("Podaj miesiąc: "); scanf("%d", &miesiac);
-        printf("Podaj zakres nr pracowników (np. 1 5): "); scanf("%d %d", &id1, &id2);
+        printf("Podaj miesiac: "); scanf("%d", &miesiac);
+        printf("Podaj zakres nr pracownikow (np. 1 5): "); scanf("%d %d", &id1, &id2);
         for (int i = id1; i <= id2; ++i) generateReportForEmployee(rok, miesiac, i);
     } else if (wybor == 3) {
         int rok, miesiac;
         printf("Podaj rok: "); scanf("%d", &rok);
-        printf("Podaj miesiąc: "); scanf("%d", &miesiac);
+        printf("Podaj miesiac: "); scanf("%d", &miesiac);
         // TODO: pobierz liczbę pracowników z bazy
         int liczbaPracownikow = 10; // przykładowo
         for (int i = 1; i <= liczbaPracownikow; ++i) generateReportForEmployee(rok, miesiac, i);
     } else {
-        printf("Powrót do głównego menu.\n");
+        printf("Powrot do glownego menu.\n");
     }
 }
 

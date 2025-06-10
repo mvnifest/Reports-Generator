@@ -6,7 +6,6 @@ typedef struct {
     int schedule; // 1 - zmiana 1, 2 - zmiana 2, 3 - nocna
     char name[32];
     char surname[32];
-  
 } User;
 
 typedef struct {
