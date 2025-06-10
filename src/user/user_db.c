@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
-static User users[MAX_USERS];
-static int userCount = 0;
+User users[MAX_USERS];
+int userCount = 0;
 
 void initUserDB() {
     memset(users, 0, sizeof(users));

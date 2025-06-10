@@ -31,6 +31,7 @@ void readWorkEntries();
 void readAbsences();
 
 void calculateSummary();        
+
 void generateReports();
 void showMenu();
 

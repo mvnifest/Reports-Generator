@@ -30,6 +30,12 @@ int getRequiredHours(int scheduleId) {
     return -1; // nie znaleziono
 }
 
+// Zwraca wymagane godziny dla danego schematu w danym miesiącu
+int getConfigHoursForMonth(int year, int month, int workScheme) {
+    // TODO: Wczytaj z konfiguracji, na razie zwraca 160
+    return 160;
+}
+
 int getScheduleCount() {
     return configCount;
 }

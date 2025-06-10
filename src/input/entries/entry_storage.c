@@ -38,3 +38,9 @@ int getEntryCount() {
 void clearEntries() {
     entryCount = 0;
 }
+
+// Zwraca wskaźnik do wpisu Entry dla danego pracownika i dnia
+Entry* getEntryForDay(int empId, int year, int month, int day) {
+    // TODO: Przeszukaj tablicę Entry, na razie zwraca NULL
+    return NULL;
+}
