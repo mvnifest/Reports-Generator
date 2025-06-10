@@ -17,7 +17,7 @@
 #include "input/configs/config_storage.h"
 
 int isConfigFile(const char* filename) {
-    return strstr(filename, ".txt") != NULL;
+    return strncmp(filename, "Config_", 7) == 0;
 }
 
 void readConfigFiles() {
@@ -44,7 +44,7 @@ void readConfigFiles() {
             char line[128];
             while (fgets(line, sizeof(line), file)) {
                 char* idStr = strtok(line, ";");
-                char* hoursStr = strtok(NULL, ";\n");
+                char* hoursStr = strtok(NULL, "\n");
 
                 if (!idStr || !hoursStr) continue;
 

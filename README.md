@@ -1,28 +1,41 @@
 # System RCP (Rejestracja Czasu Pracy)
 
-Ten projekt to system napisany w języku C, który wczytuje dane o czasie pracy pracowników z plików tekstowych i przygotowuje je do dalszego przetwarzania. Wszystko jest podzielone na kilka folderów, dla łatwiejszego zrrozumienia kodu.
+Ten projekt to system napisany w języku C, który wczytuje dane o czasie pracy pracowników z plików tekstowych i generuje raporty oraz podsumowania. Program obsługuje nie tylko godziny wejścia i wyjścia, ale też nieobecności i wymagania dotyczące czasu pracy.
 
 ## Jak to działa?
 
-- **input/** – tutaj znajduje się cały kod odpowiedzialny za wczytywanie danych z plików. Są tam trzy części:
-  - `entries/` – godziny wejścia i wyjścia pracowników,
-  - `absences/` – nieobecności,
-  - `configs/` – konfiguracja zmian, czyli ile godzin ktoś powinien przepracować w danym miesiącu.
+- **input/** – tutaj znajduje się kod odpowiedzialny za
+wczytywanie danych z plików:
+  - `entries/` – odczytuje godziny rozpoczęcia i zakończenia pracy (RCP_IN),
+  - `absences/` – obsługuje dane o nieobecnościach,
+  - `configs/` – wczytuje wymagania czasowe dla poszczególnych zmian pracy (np. ile godzin pracownik ma przepracować w danym miesiącu).
 
-- **reports/** – tutaj będzie generowany raport z podsumowaniem.
+- **reports/** – generuje raporty dla pracowników oraz podsumowania całkowite.
 
-- **user/** – są tu dane o pracownikach, np. kto ma jaką zmianę.
+- **user/** – przechowuje dane o pracownikach, takie jak ID, imię i nazwisko oraz przypisany schemat pracy.
 
-- **include/** – wspólne struktury (`Entry`, `Absence`, itd.), których używają wszystkie moduły.
+- **include/** – zawiera pliki nagłówkowe i definicje wspólnych struktur (`Entry`, `User`, `Absence`, `ScheduleConfig`, itd.), używanych przez wszystkie moduły.
 
-- **main.c** – główny plik, który uruchamia cały program.
+- **main.c** – główny plik, który uruchamia cały system i wyświetla menu.
 
 ## Gdzie wrzucać dane?
 
-- **RCP_IN/** – tutaj wrzucasz pliki z danymi, np. `RCP_2025-06-04.txt` albo `Absence_2025-06-04.txt`
-- **RCP_Config/** – tutaj są pliki z wymaganiami godzinowymi dla danej zmiany
-- **RCP_OUT/** – tutaj zapisuje się rapot
+- **RCP_IN/** – tutaj wrzucasz pliki z wejściem/wyjściem pracowników w formacie:
+1;2025-06-04 07:00:00;2025-06-04 15:00:00;
+2;2025-06-04 07:05:00;2025-06-04 14:45:00;
 
+Nazwy plików mają format `RCP_YYYY_MM_DD.txt`.
+
+- **RCP_Config/** – pliki konfiguracyjne zawierające liczbę wymaganych godzin dla danej zmiany (np. zmiana 1 – poranna). Nazwy plików i zawartość zależą od dnia i typu schematu.
+
+- **RCP_OUT/** – tutaj generowane są gotowe raporty tekstowe dla pracowników.
+
+## Co robi program?
+
+- Wczytuje dane z plików w odpowiednich folderach.
+- Pozwala podejrzeć dane o pracownikach.
+- Generuje raporty z przepracowanymi godzinami, nadgodzinami, nieobecnościami i porównaniem z wymaganym czasem.
+- Obsługuje różne typy zmian pracy: 7–14, 14–22 oraz nienormowany.
 
 ## Autorzy
 
@@ -30,4 +43,3 @@ Ten projekt to system napisany w języku C, który wczytuje dane o czasie pracy 
 - Kamil Celadyn
 - Misha Bodnar
 - Filip Kasprzycki
-
