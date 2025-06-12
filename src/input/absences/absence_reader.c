@@ -44,13 +44,13 @@ void readAbsences() {
             char line[256];
             while (fgets(line, sizeof(line), file)) {
                 char* userIdStr = strtok(line, ";");
-                char* dateStr = strtok(NULL, ";\n");
+                char* dateStr = strtok(NULL, "\n");
 
                 if (!userIdStr || !dateStr) continue;
 
                 Absence absence;
                 absence.userId = atoi(userIdStr);
-                strncpy(absence.date, dateStr, 10);
+                strncpy(absence.date, dateStr, 11);
                 absence.date[10] = '\0';
 
                 addAbsence(absence);

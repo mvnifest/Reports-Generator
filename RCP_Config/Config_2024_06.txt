@@ -1,0 +1,6 @@
+# Konfiguracja zmian na miesiąc 2024-06
+# Format: scheduleId;requiredHours
+
+1;160
+2;160
+3;160

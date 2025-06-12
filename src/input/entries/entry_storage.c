@@ -10,6 +10,8 @@
 
 #include "input/entries/entry_storage.h"
 #include <string.h>
+#include <stdio.h>
+#include "structs.h"
 
 #define MAX_ENTRIES 1000
 
@@ -39,8 +41,14 @@ void clearEntries() {
     entryCount = 0;
 }
 
-// Zwraca wskaźnik do wpisu Entry dla danego pracownika i dnia
 Entry* getEntryForDay(int empId, int year, int month, int day) {
-    // TODO: Przeszukaj tablicę Entry, na razie zwraca NULL
+    char targetDate[11];
+    snprintf(targetDate, sizeof(targetDate), "%04d-%02d-%02d", year, month, day);
+
+    for (int i = 0; i < entryCount; i++) {
+        if (allEntries[i].userId == empId && strncmp(allEntries[i].date, targetDate, 10) == 0) {
+            return &allEntries[i];
+        }
+    }
     return NULL;
 }
