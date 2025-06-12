@@ -26,7 +26,14 @@ wczytywanie danych z plików:
 
 Nazwy plików mają format `RCP_YYYY_MM_DD.txt`.
 
-- **RCP_Config/** – pliki konfiguracyjne zawierające liczbę wymaganych godzin dla danej zmiany (np. zmiana 1 – poranna). Nazwy plików i zawartość zależą od dnia i typu schematu.
+- **RCP_Config/** – pliki konfiguracyjne zawierające liczbę wymaganych godzin pracy dla każdego schematu (np. zmiana 1 – poranna).
+Nazwa pliku odpowiada miesiącowi i ma format: Config_YYYY_MM.txt
+Zawartość pliku wygląda tak:
+
+# Format: scheduleId;requiredHours
+1;160
+2;160
+3;160
 
 - **RCP_OUT/** – tutaj generowane są gotowe raporty tekstowe dla pracowników.
 

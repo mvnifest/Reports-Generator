@@ -15,7 +15,7 @@ void displayUserMenu() {
 void showAllUsers() {
     int count;
     User* users = getAllUsers(&count);
-    printf("\nID\tImię\t	Nazwisko\t	Harmonogram\n");
+    printf("\nID\tImie\t	Nazwisko\t	Harmonogram\n");
     printf("---------------------------------------------------\n");
     for (int i = 0; i < count; i++) {
         printf("%d\t%-16s%-16s", users[i].id, users[i].name, users[i].surname);

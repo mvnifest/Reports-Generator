@@ -71,7 +71,7 @@ double getWorkedHours(int empId, int year, int month, int day, int workScheme) {
 // Szablon funkcji do generowania raportu dla jednego pracownika
 void generateReportForEmployee(int year, int month, int empId) {
     char filename[64];
-    snprintf(filename, sizeof(filename), "raport_%d_%02d_%d.txt", year, month, empId);
+    snprintf(filename, sizeof(filename), "RCP_OUT/raport_%d_%02d_%d.txt", year, month, empId);
     FILE *f = fopen(filename, "w");
     if (!f) {
         printf("Błąd: nie można utworzyć pliku %s!\n", filename);
