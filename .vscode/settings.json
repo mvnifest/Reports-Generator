@@ -12,6 +12,7 @@
         "user_storage.h": "c",
         "user_db.h": "c",
         "absence_reader.h": "c",
-        "random": "c"
+        "random": "c",
+        "entry_parser.h": "c"
     }
 }

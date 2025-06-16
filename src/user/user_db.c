@@ -91,3 +91,14 @@ void loadUsersFromFile() {
     }
     fclose(f);
 }
+
+void clearUsers(void) {
+    userCount = 0;
+}
+
+User* getUserById(int id) {
+    for (int i = 0; i < userCount; ++i) {
+        if (users[i].id == id) return &users[i];
+    }
+    return NULL;
+}

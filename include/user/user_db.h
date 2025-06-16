@@ -21,7 +21,9 @@ UserOperationStatus addUser(User user);
 UserOperationStatus editUser(int userId, int newSchedule);
 UserOperationStatus deleteUser(int userId);
 User* getUser(int userId);
+User* getUserById(int id);
 User* getAllUsers(int* count);
+void clearUsers(void);
 int saveUsersToFile();
 void loadUsersFromFile();
 

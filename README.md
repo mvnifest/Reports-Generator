@@ -44,6 +44,19 @@ Zawartość pliku wygląda tak:
 - Generuje raporty z przepracowanymi godzinami, nadgodzinami, nieobecnościami i porównaniem z wymaganym czasem.
 - Obsługuje różne typy zmian pracy: 7–14, 14–22 oraz nienormowany.
 
+## Testy
+Projekt zawiera zestaw testów jednostkowych sprawdzających poprawność działania najważniejszych modułów.
+Testy znajdują się w folderze tests/. Aby je uruchomić:
+
+- Upewnij się, że masz mingw32-make.
+
+W terminalu wpisz:
+
+mingw32-make test
+
+Zbuduje się plik bin/test_runner, który uruchomi wszystkie testy.
+Każdy test wypisze na konsolę, czy zakończył się sukcesem (OK) lub porażką (FAILED).
+
 ## Autorzy
 
 - Konrad Biały
