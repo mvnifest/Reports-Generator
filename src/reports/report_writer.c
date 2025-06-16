@@ -14,15 +14,7 @@
 
 // --- Pomocnicze funkcje do raportowania ---
 
-// Zwraca wskaźnik do użytkownika o danym ID
-User* getUserById(int empId) {
-    extern User users[];
-    extern int userCount;
-    for (int i = 0; i < userCount; ++i) {
-        if (users[i].id == empId) return &users[i];
-    }
-    return NULL;
-}
+extern User* getUserById(int empId); // Użyj deklaracji zamiast definicji, jeśli funkcja jest już w user_db.c
 
 // Zwraca liczbę wymaganych godzin w danym miesiącu dla danego schematu pracy
 int getRequiredHoursForMonth(int year, int month, int workScheme) {

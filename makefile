@@ -43,3 +43,32 @@ clean:
 
 # Convenience phony targets
 .PHONY: all clean
+
+.PHONY: test
+
+test:
+	$(CC) -Wall -Wextra -g -Iinclude \
+		tests/test_runner.c \
+		tests/configs/test_config_storage.c \
+		tests/configs/test_config_reader.c \
+		tests/entries/test_entry_storage.c \
+		tests/entries/test_entry_parser.c \
+		tests/entries/test_entry_reader.c \
+		tests/absences/test_absence_storage.c \
+		tests/absences/test_absence_reader.c \
+		tests/user/test_user_db.c \
+		tests/user/test_user_storage.c \
+		tests/reports/test_report_writer.c \
+		src/input/configs/config_storage.c \
+		src/input/configs/config_reader.c \
+		src/input/entries/entry_storage.c \
+		src/input/entries/entry_parser.c \
+		src/input/entries/entry_reader.c \
+		src/input/absences/absence_storage.c \
+		src/input/absences/absence_reader.c \
+		src/user/user_db.c \
+		src/user/user_storage.c \
+		src/reports/report_writer.c \
+		-o bin/test_runner
+	./bin/test_runner
+

@@ -15,33 +15,27 @@
 
 Entry parseWorkLine(const char* line) {
     Entry entry;
+    entry.userId = -1; // domyślnie niepoprawny
 
     char buffer[256];
     strncpy(buffer, line, sizeof(buffer));
     buffer[sizeof(buffer) - 1] = '\0';
 
-    char *userIdStr, *entryStr, *exitStr;
-    userIdStr = strtok(buffer, ";");
-    entryStr  = strtok(NULL, ";");
-    exitStr   = strtok(NULL, ";");
+    char *userIdStr = strtok(buffer, ";");
+    char *dateStr = strtok(NULL, ";");
+    char *startStr = strtok(NULL, ";");
+    char *endStr = strtok(NULL, ";\n");
 
-    if (!userIdStr || !entryStr || !exitStr) {
-        entry.userId = -1; 
+    if (!userIdStr || !dateStr || !startStr || !endStr) {
         return entry;
     }
 
-    if (exitStr[strlen(exitStr) - 1] == '\n')
-        exitStr[strlen(exitStr) - 1] = '\0';
-
     entry.userId = atoi(userIdStr);
-
-    strncpy(entry.date, entryStr, 10);
+    strncpy(entry.date, dateStr, 10);
     entry.date[10] = '\0';
-
-    strncpy(entry.startTime, entryStr + 11, 8);
+    strncpy(entry.startTime, startStr, 8);
     entry.startTime[8] = '\0';
-
-    strncpy(entry.endTime, exitStr + 11, 8);
+    strncpy(entry.endTime, endStr, 8);
     entry.endTime[8] = '\0';
 
     return entry;
