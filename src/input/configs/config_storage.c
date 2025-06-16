@@ -31,6 +31,8 @@ int getRequiredHours(int scheduleId) {
 }
 
 int getConfigHoursForMonth(int year, int month, int workScheme) {
+    (void)year;
+    (void)month;
     return getRequiredHours(workScheme);
 }
 

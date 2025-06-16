@@ -48,5 +48,5 @@ Zawartość pliku wygląda tak:
 
 - Konrad Biały
 - Kamil Celadyn
-- Misha Bodnar
+- Misha Bondar
 - Filip Kasprzycki

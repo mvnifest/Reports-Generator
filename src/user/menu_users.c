@@ -6,7 +6,7 @@ void displayUserMenu() {
     printf("\n=== MENU UZYTKOWNIKOW ===\n");
     printf("1. Dodaj uzytkownika\n");
     printf("2. Edytuj harmonogram\n");
-    printf("3. Usun użytkownika\n");
+    printf("3. Usun uzytkownika\n");
     printf("4. Wyswietl wszystkich\n");
     printf("0. Powrot\n");
     printf("Wybierz opcje: ");
@@ -41,7 +41,7 @@ void handleUserMenu() {
         
         switch(choice) {
             case 1:
-                printf("Podaj ID, imię, nazwisko i harmonogram (1-3): ");
+                printf("Podaj ID, imie, nazwisko i harmonogram (1-3): ");
                 scanf("%d %31s %31s %d", &user.id, user.name, user.surname, &user.schedule);
                 status = addUser(user);
                 if (status == ADD_SUCCESS) printf("Dodano!\n");

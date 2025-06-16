@@ -70,13 +70,24 @@ int saveUsersToFile() {
     return 1;
 }
 
-int loadUsersFromFile() {
-    FILE* file = fopen(USER_DB_FILE, "rb");
-    if (!file) return 0;
-    
-    fread(&userCount, sizeof(int), 1, file);
-    fread(users, sizeof(User), userCount, file);
-    
-    fclose(file);
-    return 1;
+void loadUsersFromFile() {
+    FILE *f = fopen("users.txt", "r");
+    if (!f) {
+        userCount = 0;
+        return;
+    }
+    userCount = 0;
+    char line[256];
+    while (fgets(line, sizeof(line), f)) {
+        int id, schedule;
+        char name[64], surname[64];
+        if (sscanf(line, "%d;%63[^;];%63[^;];%d", &id, name, surname, &schedule) == 4) {
+            users[userCount].id = id;
+            strncpy(users[userCount].name, name, sizeof(users[userCount].name));
+            strncpy(users[userCount].surname, surname, sizeof(users[userCount].surname));
+            users[userCount].schedule = schedule;
+            userCount++;
+        }
+    }
+    fclose(f);
 }

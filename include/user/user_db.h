@@ -23,6 +23,6 @@ UserOperationStatus deleteUser(int userId);
 User* getUser(int userId);
 User* getAllUsers(int* count);
 int saveUsersToFile();
-int loadUsersFromFile();
+void loadUsersFromFile();
 
 #endif

@@ -10,7 +10,7 @@
 #define CONFIG_STORAGE_H
 
 #include "structs.h"
-
+int getConfigHoursForMonth(int year, int month, int scheduleId);
 void addScheduleConfig(ScheduleConfig config);
 int getRequiredHours(int scheduleId);
 int getScheduleCount();
