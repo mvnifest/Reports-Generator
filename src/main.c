@@ -55,7 +55,7 @@ int main() {
 
         switch (choice) {
             case 1:
-                printf("Wyswietlanie wszystkich uzytkowników:\n");
+                printf("Wyswietlanie wszystkich uzytkownikow:\n");
                 showAllUsers();
                 break;
             case 2:

@@ -171,7 +171,7 @@ void generateReports() {
 void generateAllIndividualReports(int year, int month) {
     extern User users[];
     extern int userCount;
-    mkdir("RCP_OUT", 0777);
+    mkdir("RCP_OUT");
 
     for (int i = 0; i < userCount; ++i) {
         User* user = &users[i];

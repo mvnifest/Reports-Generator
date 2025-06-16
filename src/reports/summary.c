@@ -19,7 +19,7 @@ void calculateSummary() {
     int month = 6;
 
     printf("\nPODSUMOWANIE PRACY (%04d-%02d):\n", year, month);
-    printf("ID\tImię\t\tNazwisko\tSchemat\tWymagane\tPrzepracowane\tNieobecności\n");
+    printf("ID\tImie\t\tNazwisko\tSchemat\tWymagane\tPrzepracowane\tNieobecnosci\n");
     printf("-------------------------------------------------------------------------------\n");
 
     for (int i = 0; i < userCount; ++i) {
