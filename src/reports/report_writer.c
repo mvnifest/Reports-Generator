@@ -14,7 +14,7 @@
 
 // --- Pomocnicze funkcje do raportowania ---
 
-extern User* getUserById(int empId); // Użyj deklaracji zamiast definicji, jeśli funkcja jest już w user_db.c
+extern User* getUserById(int empId);
 
 // Zwraca liczbę wymaganych godzin w danym miesiącu dla danego schematu pracy
 int getRequiredHoursForMonth(int year, int month, int workScheme) {

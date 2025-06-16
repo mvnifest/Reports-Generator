@@ -7,6 +7,6 @@ void displayUserMenu();
 
 void handleUserMenu();
 
-void showAllUsers();
+void showAllUsers(void);
 
 #endif

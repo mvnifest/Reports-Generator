@@ -24,7 +24,6 @@
 
 void loadUsersFromFile();
 void saveUsers();
-void showAllUsers();
 
 void readConfigFiles();         
 void readWorkEntries();

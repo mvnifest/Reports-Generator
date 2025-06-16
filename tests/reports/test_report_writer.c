@@ -23,7 +23,7 @@ int run_test_report_writer(void) {
     ScheduleConfig cfg = { .scheduleId = 1, .requiredHours = 160 };
     addScheduleConfig(cfg);
 
-    // Dodaj użytkownika do bazy
+    // Dodaj użytkownika do bazy przed testem
     User u1 = { .id = 1, .name = "Test", .surname = "User", .schedule = 1 };
     addUser(u1);
 
@@ -47,7 +47,7 @@ int run_test_report_writer(void) {
     };
     addEntry(late);
 
-    // Dodaj drugiego użytkownika do bazy
+    // Dodaj drugiego użytkownika do bazy przed testem
     User u2 = { .id = 2, .name = "Late", .surname = "Guy", .schedule = 1 };
     addUser(u2);
 
