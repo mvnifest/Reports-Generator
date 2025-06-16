@@ -54,7 +54,7 @@ void readWorkEntries() {
     while ((entry = readdir(dir)) != NULL)
     {
         if (isRCPFile(entry->d_name)) {
-            char filePath[256];
+            char filePath[512];
             snprintf(filePath, sizeof(filePath), "RCP_IN/%s", entry->d_name);
 
             FILE *file = fopen(filePath, "r");

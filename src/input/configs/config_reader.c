@@ -32,7 +32,7 @@ void readConfigFiles() {
 
     while ((entry = readdir(dir)) != NULL) {
         if (isConfigFile(entry->d_name)) {
-            char filePath[256];
+            char filePath[512];
             snprintf(filePath, sizeof(filePath), "RCP_Config/%s", entry->d_name);
 
             FILE *file = fopen(filePath, "r");
