@@ -10,6 +10,7 @@
 #include "input/absences/absence_reader.h"   
 #include "input/entries/entry_reader.h"
 #include <string.h>
+#include <sys/stat.h>
 
 // --- Pomocnicze funkcje do raportowania ---
 
@@ -62,7 +63,7 @@ double getWorkedHours(int empId, int year, int month, int day, int workScheme) {
         if (startHour > 13 || (startHour == 13 && startMin > 50)) hours -= 0.25;
         if (endHour < 22) hours -= 0.25;
     } else if (workScheme == 3) { // nienormowany
-        if (hours < 8.0) hours = hours; // po prostu licz rzeczywiste godziny
+         // po prostu licz rzeczywiste godziny
     }
     if (hours < 0) hours = 0;
     return hours;
@@ -152,8 +153,10 @@ void generateReportsMenu() {
         printf("Podaj rok: "); scanf("%d", &rok);
         printf("Podaj miesiac: "); scanf("%d", &miesiac);
         // TODO: pobierz liczbę pracowników z bazy
-        int liczbaPracownikow = 10; // przykładowo
-        for (int i = 1; i <= liczbaPracownikow; ++i) generateReportForEmployee(rok, miesiac, i);
+        extern User users[];
+        extern int userCount;
+        for (int i = 0; i < userCount; ++i)
+        generateReportForEmployee(rok, miesiac, users[i].id);
     } else {
         printf("Powrot do glownego menu.\n");
     }
@@ -162,4 +165,36 @@ void generateReportsMenu() {
 // Stara funkcja generateReports wywołuje teraz menu
 void generateReports() {
     generateReportsMenu();
+}
+
+// Nowa funkcja do wszystkich raportów  
+void generateAllIndividualReports(int year, int month) {
+    extern User users[];
+    extern int userCount;
+    mkdir("RCP_OUT", 0777);
+
+    for (int i = 0; i < userCount; ++i) {
+        User* user = &users[i];
+        int wymagane = getRequiredHoursForMonth(year, month, user->schedule);
+
+        double przepracowane = 0.0;
+        int nieobecnosci = 0;
+        int liczbaDni = getDaysInMonth(year, month);
+        for (int dzien = 1; dzien <= liczbaDni; ++dzien) {
+            if (isAbsence(user->id, year, month, dzien)) {
+                nieobecnosci++;
+                przepracowane += 8.0;
+                continue;
+            }
+            przepracowane += getWorkedHours(user->id, year, month, dzien, user->schedule);
+        }
+
+        char filename[128];
+        snprintf(filename, sizeof(filename), "RCP_OUT/%s_%s_%04d_%02d.txt", user->name, user->surname, year, month);
+        FILE* f = fopen(filename, "w");
+        if (!f) continue;
+        fprintf(f, "Raport indywidualny\nPracownik: %s %s (ID: %d)\nMiesiąc: %02d/%04d\nWymagane godziny: %d\nPrzepracowane godziny: %.2f\nNieobecności: %d\n",
+            user->name, user->surname, user->id, month, year, wymagane, przepracowane, nieobecnosci);
+        fclose(f);
+    }
 }

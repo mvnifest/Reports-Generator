@@ -22,7 +22,7 @@
 #include "reports/report_writer.h"
 #include "reports/summary.h"
 
-void loadUsers();               
+void loadUsersFromFile();
 void saveUsers();
 void showAllUsers();
 
@@ -37,7 +37,7 @@ void showMenu();
 int main() {
     int choice;
 
-    loadUsers();
+    loadUsersFromFile();
     readConfigFiles();
     readWorkEntries();
     readAbsences();
@@ -60,6 +60,7 @@ int main() {
                 break;
             case 2:
                 printf("Wczytanie danych wejściowych ponownie:\n");
+                loadUsersFromFile();
                 readWorkEntries();
                 readAbsences();
                 break;

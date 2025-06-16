@@ -20,12 +20,16 @@ OBJ = $(patsubst src/%.c,build/%.o,$(SRC)) \
 # Output binary name
 EXEC = rcp_app
 
-# Default rule
-all: $(EXEC)
+# Detect OS for Windows-specific linker flags
+ifeq ($(OS),Windows_NT)
+    WINFLAGS = -Wl,-subsystem,console
+else
+    WINFLAGS =
+endif
 
 # Link all object files into executable
 $(EXEC): $(OBJ)
-	$(CC) $(CFLAGS) -Wl,-subsystem,console -o $@ $^
+	$(CC) $(CFLAGS) $(WINFLAGS) -o $@ $^
 
 # Compile .c files to .o files into corresponding build folder (handles subdirectories)
 build/%.o: src/%.c
