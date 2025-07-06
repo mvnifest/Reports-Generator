@@ -1,65 +1,56 @@
-# System RCP (Rejestracja Czasu Pracy)
+# RCP System (Working Time Registration)
 
-Ten projekt to system napisany w języku C, który wczytuje dane o czasie pracy pracowników z plików tekstowych i generuje raporty oraz podsumowania. Program obsługuje nie tylko godziny wejścia i wyjścia, ale też nieobecności i wymagania dotyczące czasu pracy.
+This project is a system written in C that reads employee working time data from text files and generates reports and summaries. The program handles not only clock-in and clock-out times but also absences and work time requirements.
 
-## Jak to działa?
+## How does it work?
 
-- **input/** – tutaj znajduje się kod odpowiedzialny za
-wczytywanie danych z plików:
-  - `entries/` – odczytuje godziny rozpoczęcia i zakończenia pracy (RCP_IN),
-  - `absences/` – obsługuje dane o nieobecnościach,
-  - `configs/` – wczytuje wymagania czasowe dla poszczególnych zmian pracy (np. ile godzin pracownik ma przepracować w danym miesiącu).
+- **input/** – contains the code responsible for reading data from files:
+  - `entries/` – reads clock-in and clock-out times (RCP_IN),
+  - `absences/` – handles absence data,
+  - `configs/` – loads time requirements for different work shifts (e.g., how many hours an employee must work in a given month).
 
-- **reports/** – generuje raporty dla pracowników oraz podsumowania całkowite.
+- **reports/** – generates employee reports and overall summaries.
 
-- **user/** – przechowuje dane o pracownikach, takie jak ID, imię i nazwisko oraz przypisany schemat pracy.
+- **user/** – stores data about employees such as ID, first and last name, and assigned work schedule.
 
-- **include/** – zawiera pliki nagłówkowe i definicje wspólnych struktur (`Entry`, `User`, `Absence`, `ScheduleConfig`, itd.), używanych przez wszystkie moduły.
+- **include/** – contains header files and definitions of shared structures (`Entry`, `User`, `Absence`, `ScheduleConfig`, etc.) used by all modules.
 
-- **main.c** – główny plik, który uruchamia cały system i wyświetla menu.
+- **main.c** – the main file that runs the entire system and displays the menu.
 
-## Gdzie wrzucać dane?
+## Where to put the data?
 
-- **RCP_IN/** – tutaj wrzucasz pliki z wejściem/wyjściem pracowników w formacie:
+- **RCP_IN/** – put the clock-in/clock-out files here in the format:
 1;2025-06-04 07:00:00;2025-06-04 15:00:00;
 2;2025-06-04 07:05:00;2025-06-04 14:45:00;
 
-Nazwy plików mają format `RCP_YYYY_MM_DD.txt`.
+Filenames follow the format `RCP_YYYY_MM_DD.txt`.
 
-- **RCP_Config/** – pliki konfiguracyjne zawierające liczbę wymaganych godzin pracy dla każdego schematu (np. zmiana 1 – poranna).
-Nazwa pliku odpowiada miesiącowi i ma format: Config_YYYY_MM.txt
-Zawartość pliku wygląda tak:
+- **RCP_Config/** – configuration files specifying required work hours for each schedule (e.g., shift 1 – morning).
+Filename format: `Config_YYYY_MM.txt`
+File content example:
 
 # Format: scheduleId;requiredHours
-1;160
-2;160
+1;160  
+2;160  
 3;160
 
-- **RCP_OUT/** – tutaj generowane są gotowe raporty tekstowe dla pracowników.
+- **RCP_OUT/** – generated text reports for employees are saved here.
 
-## Co robi program?
+## What does the program do?
 
-- Wczytuje dane z plików w odpowiednich folderach.
-- Pozwala podejrzeć dane o pracownikach.
-- Generuje raporty z przepracowanymi godzinami, nadgodzinami, nieobecnościami i porównaniem z wymaganym czasem.
-- Obsługuje różne typy zmian pracy: 7–14, 14–22 oraz nienormowany.
+- Loads data from files in the corresponding folders.
+- Allows viewing employee data.
+- Generates reports with worked hours, overtime, absences, and comparisons with required hours.
+- Supports various work shift types: 7–14, 14–22, and flexible.
 
-## Testy
-Projekt zawiera zestaw testów jednostkowych sprawdzających poprawność działania najważniejszych modułów.
-Testy znajdują się w folderze tests/. Aby je uruchomić:
+## Tests
 
-- Upewnij się, że masz mingw32-make.
+The project includes a set of unit tests to verify the correct operation of the main modules.
+Tests are located in the `tests/` folder. To run them:
 
-W terminalu wpisz:
+- Make sure you have `mingw32-make` installed.
 
+In the terminal, run:
+
+```bash
 mingw32-make test
-
-Zbuduje się plik bin/test_runner, który uruchomi wszystkie testy.
-Każdy test wypisze na konsolę, czy zakończył się sukcesem (OK) lub porażką (FAILED).
-
-## Autorzy
-
-- Konrad Biały
-- Kamil Celadyn
-- Misha Bondar
-- Filip Kasprzycki
