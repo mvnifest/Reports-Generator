@@ -54,7 +54,7 @@ In the terminal, run:
 
 ```bash
 mingw32-make test
-
+```
 This will build the `bin/test_runner` file, which will execute all tests.  
 Each test will print to the console whether it passed (OK) or failed (FAILED).
 
